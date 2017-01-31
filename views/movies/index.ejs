@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Movie List</h1>
+    <% movies.forEach(function(index) { %>
+      <div>
+        <a href="<%= '/movies/' + index.id %>">
+          <%= index.title %>
+        </a>
+      </div>
+    <% }) %>
+  </body>
+</html>
