@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%=director.name %></title>
+</head>
+<body>
+<div>
+  <span><%= director.name %></span><br/>
+
+    <form action="<%= '/directors/' + director.id + '?_method=DELETE' %>" method="POST">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="<%='/directors/' + director.id + '/edit' %>">Edit Director</a><br/>
+
+    <a href="/directors">Back to Directors Page</a><br/>
+    
+</div>
+</body>
+</html>
