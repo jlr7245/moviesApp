@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -51,15 +52,12 @@ app.use(passport.session());
 
 // moving user routes
 app.use('/', index);
-<<<<<<< HEAD
+
 app.use('/directors',require('./routes/directors'))
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
+app.use('/movies');
 
-=======
-app.use('/users', users);
-app.use('/movies', movies);
->>>>>>> list-movies
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

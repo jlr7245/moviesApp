@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
   })
 });
 
-
 /* GET movies ID. */
 router.get('/:id', function(req, res, next) {
   models.Movie.findById(req.params.id).then(function(movie) {
@@ -23,6 +22,24 @@ router.get('/:id', function(req, res, next) {
       snyopsis: 'synopsis'
 
     });
+  });
+});
+
+/* EDIT movies */
+router.get('/:id/edit', function(req, res, next) {
+  models.Movie.findById(req.params.id).then(function(movie) {
+    res.render('movies/edit', {
+      movie: movie
+    });
+  });
+});
+
+router.put('/:id', function(req, res, next) {
+  models.Movie.update({
+    title: req.body.title,
+    synopsis: req.body.synopsis
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/movies/' + req.params.id);
   });
 });
 

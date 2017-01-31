@@ -11,11 +11,14 @@
     <p>Synopsis: <%= movie.synopsis %></p>
 
 
+
     <a href="<%= '/movies/' + movie.id + '/edit' %>">Edit Movie</a>
     <a href="/movies">Back to movies</a>
 
     <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
         <input type="submit" value="Delete" />
+
+
 
   </body>
 </html>
