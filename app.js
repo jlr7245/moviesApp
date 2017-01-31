@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -11,6 +12,7 @@ const movies = require('./routes/movies');
 
 
 const app = express();
+app.use(methodOverride('_method'));
 
 require('dotenv').config();
 

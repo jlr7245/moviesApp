@@ -5,9 +5,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+
     <h1>Movie List</h1>
     <p>Title: <%= movie.title %></p>
     <p>Synopsis: <%= movie.synopsis %></p>
+
+    <a href="<%= '/movies/' + movie.id + '/edit' %>">Edit Movie</a>
+    <a href="/movies">Back to movies</a>
 
   </body>
 </html>
