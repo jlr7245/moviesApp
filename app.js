@@ -13,10 +13,7 @@ const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const app = express();
 
-// moving user routes
-app.use('/', index);
-app.use('/auth', authRoutes);
-app.use('/user', userRoutes);
+
 
 
 
@@ -47,6 +44,11 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// moving user routes
+app.use('/', index);
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
 
 
 // catch 404 and forward to error handler

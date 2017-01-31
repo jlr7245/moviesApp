@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const models = require('../db/models/index');
+//const bodyParser = require('body-parser');
 
 function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);

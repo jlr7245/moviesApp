@@ -5,7 +5,7 @@ const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 
 router.get('/register', authHelpers.loginRedirect, (req,res) => {
-  res.render('registration', {title: 'register'});
+  res.render('auth/registration', {title: 'register'});
 });
 
 router.post('/register', (req,res,next) => {
@@ -13,7 +13,7 @@ router.post('/register', (req,res,next) => {
     .then((user) => {
       req.login(user, (err) => {
         if (err) return next(err);
-        res.redirect('/user', {title: 'user'});
+        res.redirect('/user');
       });
     })
     .catch((err) => {res.status(500).json({status: 'error'});});
