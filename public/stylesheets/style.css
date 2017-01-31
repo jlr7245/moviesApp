@@ -1,2 +1,12 @@
+/* Variables */
+/* base */
+body {
+  min-height: 100vh; }
+
+body.home {
+  background-image: url("../images/hm-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 /*# sourceMappingURL=style.css.map */

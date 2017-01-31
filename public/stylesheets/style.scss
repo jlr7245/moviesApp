@@ -1,0 +1,18 @@
+/* Variables */
+
+$base: #DA3543;
+$base-dk: #8C222A;
+$base-dkst: darken($base-dk, 20);
+$highlight: #e33946;
+
+
+/* base */
+body {
+  min-height: 100vh;
+}
+body.home {
+  background-image: url('../images/hm-hero.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
