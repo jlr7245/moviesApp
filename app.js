@@ -6,18 +6,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
-
 const index = require('./routes/index');
 const users = require('./routes/user');
 const movies = require('./routes/movies');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const app = express();
-
-
 
 require('dotenv').config();
 
@@ -52,12 +48,10 @@ app.use(passport.session());
 
 // moving user routes
 app.use('/', index);
-
 app.use('/directors',require('./routes/directors'))
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
-app.use('/movies');
-
+app.use('/movies', movies);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
