@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const users = require('./routes/user');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const app = express();
@@ -16,7 +16,7 @@ const app = express();
 // moving user routes
 app.use('/', index);
 app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
+app.use('/user', userRoutes);
 
 
 
