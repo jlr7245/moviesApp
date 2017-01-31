@@ -13,6 +13,20 @@ router.get('/', function(req, res, next) {
   })
 });
 
+/* Add a Movie */
+router.get('/add', function(req, res, next) {
+  res.render('movies/add');
+});
+
+router.post('/', function(req, res, next) {
+  models.Movie.create({
+    title: req.body.title,
+    synopsis: req.body.synopsis
+  }).then(function() {
+    res.redirect('/movies')
+  });
+});
+
 /* GET movies ID. */
 router.get('/:id', function(req, res, next) {
   models.Movie.findById(req.params.id).then(function(movie) {
@@ -44,7 +58,7 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-
+/*  DELETE movies */
 router.delete('/:id', function(req, res, next) {
   models.Movie.destroy({
     where: { id: req.params.id }
@@ -52,6 +66,7 @@ router.delete('/:id', function(req, res, next) {
     res.redirect('/movies')
   });
 });
+
 
 module.exports = router;
 
