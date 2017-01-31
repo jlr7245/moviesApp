@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 
@@ -15,8 +16,6 @@ const app = express();
 
 
 
-
-
 require('dotenv').config();
 
 // view engine setup
@@ -25,6 +24,9 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -47,6 +49,7 @@ app.use(passport.session());
 
 // moving user routes
 app.use('/', index);
+app.use('/directors',require('./routes/directors'))
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 
