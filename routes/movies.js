@@ -13,5 +13,19 @@ router.get('/', function(req, res, next) {
   })
 });
 
+
+/* GET movies ID. */
+router.get('/:id', function(req, res, next) {
+  models.Movie.findById(req.params.id).then(function(movie) {
+    res.render('movies/show', {
+      movie: movie,
+      title: 'title',
+      snyopsis: 'synopsis'
+
+    });
+  });
+});
+
+
 module.exports = router;
 
