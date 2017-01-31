@@ -10,6 +10,8 @@ var users = require('./routes/users');
 
 var app = express();
 
+require('dotenv').config();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,7 +25,7 @@ app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
+  indentedSyntax: false,
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
