@@ -3,12 +3,21 @@
 <div class='container white'>
   <div class='row'>
     <h1>Movie List</h1>
-    <ul class='movies'>
-      <% movies.forEach(function(index) { %>
+    <ul class='movies'> 
+      <% movies.forEach(function(movie) { %>
         <li class='card'>
-          <a href="<%= '/movies/' + index.id %>">
-            <%= index.title %>
-          </a>
+          <div class='card-content'>
+            <a href="<%= '/movies/' + movie.id %>">
+              <%= movie.title %>
+            </a>
+            <% if (user !== undefined) { %>
+              <div class='card-action'>
+                <form action="<%= `/movies/${movie.id}/${user.id}` %>" method="POST">
+                  <button type='submit' class='actioner btn' data-movieid='<%= movie.id %>'><i class='fa fa-heart fa-2x'></i></button>
+                </form>
+              </div>
+            <% } %>
+          </div>
         </li>
       <% }) %>
     </ul>

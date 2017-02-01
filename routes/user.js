@@ -9,7 +9,8 @@ router.get('/', authHelpers.loginRequired, (req,res,next) => {
   res.render('user/index', {
     user: req.user.dataValues,
     title: 'user',
-    navClass: 'red darken-4'
+    navClass: 'red darken-4',
+    currentRoute: 'user'
   });
 });
 
