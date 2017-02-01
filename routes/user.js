@@ -8,7 +8,8 @@ var authHelpers = require('../auth/auth-helpers');
 router.get('/', authHelpers.loginRequired, (req,res,next) => {
   res.render('user/index', {
     user: req.user.dataValues,
-    title: 'user'
+    title: 'user',
+    navClass: 'red darken-4'
   });
 });
 

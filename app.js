@@ -48,7 +48,7 @@ app.use(passport.session());
 
 // moving user routes
 app.use('/', index);
-app.use('/directors',require('./routes/directors'))
+app.use('/directors',require('./routes/directors'));
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/movies', movies);
