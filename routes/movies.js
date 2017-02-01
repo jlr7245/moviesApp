@@ -8,14 +8,15 @@ router.get('/', function(req, res, next) {
   models.Movie.findAll({}).then(function(movie) {
     res.render('movies/index', {
       title: 'title',
-      movies: movie
+      movies: movie,
+      navClass: 'red darken-4'
     })
   })
 });
 
 /* Add a Movie */
 router.get('/add', function(req, res, next) {
-  res.render('movies/add');
+  res.render('movies/add', {navClass: 'red darken-4'});
 });
 
 router.post('/', function(req, res, next) {
@@ -33,8 +34,8 @@ router.get('/:id', function(req, res, next) {
     res.render('movies/show', {
       movie: movie,
       title: 'title',
-      snyopsis: 'synopsis'
-
+      snyopsis: 'synopsis',
+      navClass: 'red darken-4'
     });
   });
 });

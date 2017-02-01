@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Fazbook-Edit</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Create a user!</h1>
+<% include ../partials/header.ejs %>
+
+    <h1>Add a new movie!</h1>
     <form action="<%= `/movies/${movie.id}?_method=PUT` %>" method="POST">
       <div>
         <label>
@@ -25,5 +20,5 @@
 
       </form>
     </form>
-  </body>
-</html>
+
+<% include ../partials/footer.ejs %>
