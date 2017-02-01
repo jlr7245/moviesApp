@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/css?family=Lora|Poppins" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Judson:400,400i|Poppins|Space+Mono" rel="stylesheet" />
     <script
       src="http://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -14,3 +14,6 @@
   </head>
   <body class='<%= title %>'>
   <% include ./nav.ejs %>
+  <% if (title !== 'home' && currentRoute !== 'auth') { %>
+    <% include ./top.ejs %>
+  <% } %>

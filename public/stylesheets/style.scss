@@ -3,16 +3,96 @@
 $base: #DA3543;
 $base-dk: #8C222A;
 $base-dkst: darken($base-dk, 20);
-$highlight: #e33946;
+$highlight: #FDEDB2;
+$wht: white;
+$ltg: #eee;
+$dkg: #ddd;
+
+$pop: 'poppins', sans-serif;
+$lor: 'judson', georgia, serif;
+$spm: 'Space Mono', courier, monospace;
 
 
 /* base */
 body {
   min-height: 100vh;
+  font-family: $pop;
 }
-body.home {
+
+.btn, .btn-flat, .btn-floating, .btn-large {
+  font-family: $spm;
+}
+
+/* homepage */
+
+.home {
   background-image: url('../images/hm-hero.jpg');
   background-size:cover;
   background-repeat:no-repeat;
   background-position: center center;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  z-index:500;
+  i {
+    color: $highlight;
+  }
+}
+
+.movie, .directors, .home {
+  nav {
+    position: fixed;
+  }
+}
+
+.hero {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  h4, h1 {
+    color: $highlight;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 5em;
+  }
+  h4 {
+    font-family: $lor;
+    color: $wht;
+    //text-transform:uppercase;
+    font-style: oblique;
+  }
+  .btn-large {
+    margin: 0 15px;
+    width: 200px;
+  }
+}
+
+/* movies */
+
+.movies, .directorlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  li {
+    flex: 1 1 200px;
+    min-height: 200px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    //border:3px solid $base-dk;
+    background-color: $base;
+    a {
+      text-align: center;
+      color: $highlight;
+      font-size: 1.5rem;
+    }
+  }
 }

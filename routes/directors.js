@@ -6,14 +6,16 @@ var models = require('../db/models/index');
 
 // New director
 router.get('/new', function(req, res, next) {
-  res.render('directors/new', { title: 'new director' });
+  res.render('directors/new', { title: 'new director', navClass: 'red darken-4', currentRoute: 'directors' });
 });
 
 router.get('/', function(req, res, next) {
   models.Director.findAll({}).then(function(directors) {
     res.render('directors/index', {
       title: 'directors',
-      directors: directors
+      directors: directors,
+      navClass: 'red darken-4',
+      currentRoute: 'directors'
     });
   });
 });
@@ -40,14 +42,14 @@ router.delete('/:id', function(req, res, next) {
 //routes user to full director profile info on click of Director Name link on main page
 router.get('/:id', function(req, res, next) {
   models.Director.findById(req.params.id).then(function(director) {
-    res.render('directors/show', { director: director, title: director.fullName });
+    res.render('directors/show', { director: director, title: director.name, navClass: 'red darken-4', currentRoute: 'directors' });
   });
 });
 
 //routes to edit view with input fields prepopulated with previously inputted information
 router.get('/:id/edit', function(req, res, next) {
   models.Director.findById(req.params.id).then(function(director) {
-    res.render('directors/edit', { director: director });
+    res.render('directors/edit', { director: director, navClass: 'red darken-4', currentRoute: 'directors' });
   });
 });
 
