@@ -7,6 +7,7 @@ var models = require('../db/models/index');
 router.get('/', function(req, res, next) {
   models.Movie.findAll({}).then(function(movie) {
     res.render('movies/index', {
+      user: req.user,
       title: 'movie',
       movies: movie,
       navClass: 'red darken-4',
@@ -70,6 +71,15 @@ router.delete('/:id', function(req, res, next) {
   }).then(function(movie) {
     res.redirect('/movies');
   });
+});
+
+/* add a favorite */
+
+router.post('/:movie/:user', (req,res,next) => {
+  models.Favorites.create({
+    movieId: req.params.movie,
+    userId: req.params.user
+  }).then(() => res.redirect('/movies'));
 });
 
 
