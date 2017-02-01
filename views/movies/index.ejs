@@ -1,14 +1,20 @@
 <% include ../partials/header.ejs %>
+
+<div class='container white'>
+  <div class='row'>
     <h1>Movie List</h1>
-    <% movies.forEach(function(index) { %>
-      <div>
-        <a href="<%= '/movies/' + index.id %>">
-          <%= index.title %>
-        </a>
-      </div>
-    <% }) %>
+    <ul class='movies'>
+      <% movies.forEach(function(index) { %>
+        <li class='card'>
+          <a href="<%= '/movies/' + index.id %>">
+            <%= index.title %>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
 
-
-      <button type="submit"><a href="/movies/add">Add Movie</a></button>
+<button type="submit"><a href="/movies/add">Add Movie</a></button>
 
 <% include ../partials/footer.ejs %>

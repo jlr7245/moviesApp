@@ -7,11 +7,12 @@ var models = require('../db/models/index');
 router.get('/', function(req, res, next) {
   models.Movie.findAll({}).then(function(movie) {
     res.render('movies/index', {
-      title: 'title',
+      title: 'movie',
       movies: movie,
-      navClass: 'red darken-4'
-    })
-  })
+      navClass: 'red darken-4',
+      currentRoute: 'movies'
+    });
+  });
 });
 
 /* Add a Movie */
@@ -24,7 +25,7 @@ router.post('/', function(req, res, next) {
     title: req.body.title,
     synopsis: req.body.synopsis
   }).then(function() {
-    res.redirect('/movies')
+    res.redirect('/movies');
   });
 });
 
@@ -33,9 +34,10 @@ router.get('/:id', function(req, res, next) {
   models.Movie.findById(req.params.id).then(function(movie) {
     res.render('movies/show', {
       movie: movie,
-      title: 'title',
+      title: 'movie',
       snyopsis: 'synopsis',
-      navClass: 'red darken-4'
+      navClass: 'red darken-4',
+      currentRoute: 'movies'
     });
   });
 });
@@ -44,7 +46,9 @@ router.get('/:id', function(req, res, next) {
 router.get('/:id/edit', function(req, res, next) {
   models.Movie.findById(req.params.id).then(function(movie) {
     res.render('movies/edit', {
-      movie: movie
+      movie: movie,
+      navClass: 'red darken-4',
+      currentRoute: 'movies'
     });
   });
 });
@@ -64,7 +68,7 @@ router.delete('/:id', function(req, res, next) {
   models.Movie.destroy({
     where: { id: req.params.id }
   }).then(function(movie) {
-    res.redirect('/movies')
+    res.redirect('/movies');
   });
 });
 

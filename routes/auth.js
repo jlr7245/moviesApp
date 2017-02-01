@@ -5,7 +5,7 @@ const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 
 router.get('/register', authHelpers.loginRedirect, (req,res) => {
-  res.render('auth/registration', {title: 'register', navClass: 'red darken-4'});
+  res.render('auth/registration', {title: 'register', navClass: 'red darken-4', currentRoute: 'auth'});
 });
 
 router.post('/register', (req,res,next) => {
@@ -20,7 +20,7 @@ router.post('/register', (req,res,next) => {
 });
 
 router.get('/login', authHelpers.loginRedirect, (req,res) => {
-  res.render('auth/login', {title: 'login', navClass: 'red darken-4'});
+  res.render('auth/login', {title: 'login', navClass: 'red darken-4', currentRoute: 'auth'});
 });
 
 router.post('/login', passport.authenticate('local', {

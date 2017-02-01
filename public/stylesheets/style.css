@@ -1,12 +1,66 @@
 /* Variables */
 /* base */
 body {
-  min-height: 100vh; }
+  min-height: 100vh;
+  font-family: "poppins", sans-serif; }
 
-body.home {
+.btn, .btn-flat, .btn-floating, .btn-large {
+  font-family: "Space Mono", courier, monospace; }
+
+/* homepage */
+.home {
   background-image: url("../images/hm-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  z-index: 500; }
+  nav i {
+    color: #FDEDB2; }
+
+.movie nav, .directors nav, .home nav {
+  position: fixed; }
+
+.hero {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+  .hero h4, .hero h1 {
+    color: #FDEDB2; }
+  .hero h1 {
+    font-weight: 800;
+    font-size: 5em; }
+  .hero h4 {
+    font-family: "judson", georgia, serif;
+    color: white;
+    font-style: oblique; }
+  .hero .btn-large {
+    margin: 0 15px;
+    width: 200px; }
+
+/* movies */
+.movies, .directorlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .movies li, .directorlist li {
+    flex: 1 1 200px;
+    min-height: 200px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #DA3543; }
+    .movies li a, .directorlist li a {
+      text-align: center;
+      color: #FDEDB2;
+      font-size: 1.5rem; }
 
 /*# sourceMappingURL=style.css.map */
