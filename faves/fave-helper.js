@@ -5,7 +5,7 @@ function getFavorites(req,res,next) {
     replacements: { id: req.user.id },
     type: models.sequelize.QueryTypes.SELECT
   }).then((faves) => {
-    res.faves = faves;
+    res.locals.faves = faves;
     return next();
   });
 }

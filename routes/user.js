@@ -9,7 +9,7 @@ const favHelper = require('../faves/fave-helper');
 router.get('/', authHelpers.loginRequired, favHelper, (req,res,next) => {
   res.render('user/index', {
     user: req.user.dataValues,
-    faves: res.faves,
+    faves: res.locals.faves,
     title: 'user',
     navClass: 'red darken-4',
     currentRoute: 'user'
