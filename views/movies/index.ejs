@@ -2,7 +2,14 @@
 
 <div class='container white'>
   <div class='row'>
-    <h1>Movie List</h1>
+    <div class='col m8'>
+      <h1>Movie List</h1>
+    </div>
+    <div class='col m4 addbutton'>
+      <a class='btn-large red darken-4' href="/movies/add">Add Movie</a>
+    </div>
+    </div>
+    <div class='row'>
     <ul class='movies'> 
       <% movies.forEach(function(movie) { %>
         <li class='card'>
@@ -13,7 +20,7 @@
             <% if (user !== undefined) { %>
               <div class='card-action'>
                 <form action="<%= `/movies/${movie.id}/${user.id}` %>" method="POST">
-                  <button type='submit' class='actioner btn' data-movieid='<%= movie.id %>'><i class='fa fa-heart fa-2x'></i></button>
+                  <button type='submit' class='actioner btn grey darken-4' data-movieid='<%= movie.id %>'><i class='fa fa-heart fa-2x'></i></button>
                 </form>
               </div>
             <% } %>
@@ -23,7 +30,5 @@
     </ul>
   </div>
 </div>
-
-<button type="submit"><a href="/movies/add">Add Movie</a></button>
 
 <% include ../partials/footer.ejs %>

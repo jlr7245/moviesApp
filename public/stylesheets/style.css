@@ -7,6 +7,15 @@ body {
 .btn, .btn-flat, .btn-floating, .btn-large {
   font-family: "Space Mono", courier, monospace; }
 
+h3 {
+  font-family: "judson", georgia, serif;
+  font-style: oblique;
+  color: #DA3543; }
+
+h6 {
+  padding-top: 50px;
+  text-transform: uppercase; }
+
 /* homepage */
 .home {
   background-image: url("../images/hm-hero.jpg");
@@ -44,23 +53,25 @@ nav {
     width: 200px; }
 
 /* movies */
-.movies, .directorlist {
+.movies, .directorlist, .favlist {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
-  .movies li, .directorlist li {
+  .movies li, .directorlist li, .favlist li {
     flex: 1 1 200px;
     min-height: 200px;
     display: flex;
     box-sizing: border-box;
     padding: 20px;
-    justify-content: center;
-    align-items: center;
     margin: 10px;
     background-color: #DA3543; }
-    .movies li a, .directorlist li a {
+    .movies li a, .directorlist li a, .favlist li a {
       text-align: center;
       color: #FDEDB2;
       font-size: 1.5rem; }
+
+.addbutton {
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0; }
 
 /*# sourceMappingURL=style.css.map */

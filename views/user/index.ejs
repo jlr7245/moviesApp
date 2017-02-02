@@ -1,16 +1,16 @@
 <% include ../partials/header %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <%= user.firstName%> <%= user.lastName %>
-    <%= user.dob %>
+  <div class='container'>
+    <h6>Dashboard</h6>
+    <h3>Welcome back, <%= user.firstName%> <%= user.lastName %>! </h3>
     
     <h1>Your Favorites</h1>
-    <ul>
+    <ul class='favlist'>
     <% if (faves !== undefined) { %>
      <% faves.forEach((fave) => { %>
        <li><a href=<%= `/movies/${fave.id}`%> ><%= fave.title %></a></li>
       <% }); %>
     <% } %>
     </ul>
+  </div>
 
 <% include ../partials/footer %>

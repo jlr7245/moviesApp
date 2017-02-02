@@ -1,9 +1,13 @@
 <% include ../partials/header.ejs %>
 <div class='container'>
   <div class='row'>
-    <h1>Directors List</h1>
-    <a href="/directors/new">Add New Director</a><br/>
-    <ul class='directorlist'>
+    <div class='col m8'>
+      <h1>Directors List</h1>
+    </div>
+    <div class='col m4 addbutton'>
+      <a class='btn-large red darken-4' href="/directors/new">Add New Director</a>
+    </div>
+    <ul class='directorlist clearfix'>
     <% directors.forEach(function(director) { %>
       <li class='card'>
         <a href= '<%= `/directors/${director.id}` %>'><span><%= director.name %></span></a>

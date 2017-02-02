@@ -23,6 +23,17 @@ body {
   font-family: $spm;
 }
 
+h3 {
+  font-family: $lor;
+  font-style: oblique;
+  color: $base;
+}
+
+h6 {
+  padding-top: 50px;
+  text-transform: uppercase;
+}
+
 /* homepage */
 
 .home {
@@ -74,7 +85,7 @@ nav {
 
 /* movies */
 
-.movies, .directorlist {
+.movies, .directorlist, .favlist {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -84,8 +95,6 @@ nav {
     display: flex;
     box-sizing: border-box;
     padding: 20px;
-    justify-content: center;
-    align-items: center;
     margin: 10px;
     //border:3px solid $base-dk;
     background-color: $base;
@@ -95,4 +104,9 @@ nav {
       font-size: 1.5rem;
     }
   }
+}
+
+.addbutton {
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
 }
