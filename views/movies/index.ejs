@@ -17,6 +17,7 @@
             <a href="<%= '/movies/' + movie.id %>">
               <%= movie.title %>
             </a>
+          </div>
             <% if (user !== undefined) { %>
               <div class='card-action'>
                 <form action="<%= `/movies/${movie.id}/${user.id}` %>" method="POST">
@@ -24,7 +25,6 @@
                 </form>
               </div>
             <% } %>
-          </div>
         </li>
       <% }) %>
     </ul>
