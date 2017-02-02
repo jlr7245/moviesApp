@@ -1,16 +1,13 @@
 <% include ../partials/header.ejs %>
-
-    <h1>Movie List</h1>
+  <div class='container'>
+    <h1>About <%= movie.title %></h1>
     <p>Title: <%= movie.title %></p>
     <p>Synopsis: <%= movie.synopsis %></p>
-
-
-    <a href="<%= '/movies/' + movie.id + '/edit' %>">Edit Movie</a>
-    <a href="/movies">Back to movies</a>
-
     <form action="<%= `/movies/${movie.id}?_method=DELETE` %>" method="POST">
-        <input type="submit" value="Delete" />
-
-
+      <a class='btn red darken-4' href="<%= '/movies/' + movie.id + '/edit' %>">Edit</a>
+      <input class='btn red darken-4' type="submit" value="Delete" />
+      <a class='btn red darken-4' href="/movies">Back to movies</a>
+    </form>
+  </div>
 
 <% include ../partials/footer.ejs %>

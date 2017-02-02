@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 /* Add a Movie */
 router.get('/add', function(req, res, next) {
-  res.render('movies/add', {navClass: 'red darken-4'});
+  res.render('movies/add', {navClass: 'red darken-4', title:'addmovie', currentRoute: 'movies'});
 });
 
 router.post('/', function(req, res, next) {
@@ -49,7 +49,8 @@ router.get('/:id/edit', function(req, res, next) {
     res.render('movies/edit', {
       movie: movie,
       navClass: 'red darken-4',
-      currentRoute: 'movies'
+      currentRoute: 'movies',
+      title: 'edit'
     });
   });
 });
